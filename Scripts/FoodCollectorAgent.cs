@@ -138,7 +138,7 @@ public class FoodCollectorAgent : Agent
             {
                 if (hit.collider.gameObject.CompareTag("agent"))
                 {
-                    hit.collider.gameObject.GetComponent<FoodCollectorAgent>().Freeze();
+                    //hit.collider.gameObject.GetComponent<FoodCollectorAgent>().Freeze();
                 }
             }
         }
