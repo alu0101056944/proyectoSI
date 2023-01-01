@@ -10,7 +10,7 @@ public class FoodLogic : MonoBehaviour
         if (respawn)
         {
             transform.position = new Vector3(Random.Range(-myArea.range, myArea.range),
-                3f,
+                0f,
                 Random.Range(-myArea.range, myArea.range)) + myArea.transform.position;
         }
         else

@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 
 public class FoodCollectorAgent : Agent
 {
-    
+    [SerializeField]
+    private Transform spawnPosition;
     [SerializeField]
     private string targetFlag = "food";
     [SerializeField]
@@ -104,7 +105,7 @@ public class FoodCollectorAgent : Agent
         if (!m_Frozen)
         {
             var forward = Mathf.Clamp(continuousActions[0], -1f, 1f);
-            var right = Mathf.Clamp(continuousActions[1], -1f, 1f);
+            var right = Mathf.Clamp(continuousActions[1], -1f, 1f); // unused
             var rotate = Mathf.Clamp(continuousActions[2], -1f, 1f);
 
             dirToGo = transform.forward * forward;
@@ -245,12 +246,29 @@ public class FoodCollectorAgent : Agent
             {
                 m_FoodCollecterSettings.totalScore += 1;
             }
+            transform.position = spawnPosition.position;
         }
         if (collision.gameObject.CompareTag(badFlag))
         {
             Poison();
             collision.gameObject.GetComponent<FoodLogic>().OnEaten();
 
+            AddReward(-1f);
+            if (contribute)
+            {
+                m_FoodCollecterSettings.totalScore -= 1;
+            }
+        }
+        if (collision.gameObject.CompareTag("agentPredator"))
+        {
+            AddReward(-1f);
+            if (contribute)
+            {
+                m_FoodCollecterSettings.totalScore = 0;
+            }
+        }
+        if (collision.gameObject.CompareTag("wall"))
+        {
             AddReward(-1f);
             if (contribute)
             {
