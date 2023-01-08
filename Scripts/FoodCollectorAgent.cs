@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 public class FoodCollectorAgent : Agent
 {
     [SerializeField]
-    private Transform spawnPosition;
-    [SerializeField]
     private string targetFlag = "food";
     [SerializeField]
     private string badFlag = "badFood";
@@ -75,7 +73,7 @@ public class FoodCollectorAgent : Agent
         var b = (byte)(hexVal & 0xFF);
         return new Color32(r, g, b, 255);
     }
- 
+
     public void MoveAgent(ActionBuffers actionBuffers)
     {
         m_Shoot = false;
@@ -105,7 +103,7 @@ public class FoodCollectorAgent : Agent
         if (!m_Frozen)
         {
             var forward = Mathf.Clamp(continuousActions[0], -1f, 1f);
-            var right = Mathf.Clamp(continuousActions[1], -1f, 1f); // unused
+            var right = Mathf.Clamp(continuousActions[1], -1f, 1f);
             var rotate = Mathf.Clamp(continuousActions[2], -1f, 1f);
 
             dirToGo = transform.forward * forward;
@@ -191,7 +189,6 @@ public class FoodCollectorAgent : Agent
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
-
     {
         MoveAgent(actionBuffers);
     }
@@ -246,7 +243,6 @@ public class FoodCollectorAgent : Agent
             {
                 m_FoodCollecterSettings.totalScore += 1;
             }
-            transform.position = spawnPosition.position;
         }
         if (collision.gameObject.CompareTag(badFlag))
         {
