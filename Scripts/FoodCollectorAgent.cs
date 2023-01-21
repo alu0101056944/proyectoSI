@@ -222,6 +222,7 @@ public class FoodCollectorAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        totalScore = 0f;
         Unfreeze();
         Unpoison();
         Unsatiate();
@@ -262,15 +263,6 @@ public class FoodCollectorAgent : Agent
                 }
             }
         }
-        if (collision.gameObject.CompareTag("agentPredator"))
-        {
-            totalScore -= 100f;
-            AddReward(-100f);
-            if (contribute)
-            {
-                m_FoodCollecterSettings.totalScore = 0;
-            }
-        }
         if (collision.gameObject.CompareTag("wall"))
         {
             --totalScore;
@@ -280,6 +272,11 @@ public class FoodCollectorAgent : Agent
                 m_FoodCollecterSettings.totalScore -= 1;
             }
         }
+    }
+
+    public void penalize(int delta) {
+      totalScore += delta;
+      AddReward(delta);
     }
 
     public float getScore() {

@@ -553,7 +553,7 @@ PrefabInstance:
     - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
         type: 3}
       propertyPath: secondsBetweenUpdate
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
         type: 3}
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b7774d9552a8241a560cffaf14c30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenReset: 20
+  secondsBetweenReset: 25
   weightOfObstacleSpawn: 10
   maximumObstaclesToSpawn: 15
   automata: {fileID: 1393324616}

@@ -224,6 +224,7 @@ public class PredatorAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        totalScore = 0f;
         Unfreeze();
         Unpoison();
         Unsatiate();
@@ -250,6 +251,11 @@ public class PredatorAgent : Agent
             {
                 m_FoodCollecterSettings.totalScore += 1;
             }
+        }
+        if (collision.gameObject.CompareTag(targetFlag) &&
+            collision.gameObject.GetComponent<FoodCollectorAgent>() != null) {
+            var script = collision.gameObject.GetComponent<FoodCollectorAgent>();
+            script.penalize(-100);
         }
         for (int i = 0; i < badFlags.Count; ++i) {
             if (collision.gameObject.CompareTag(badFlags[i]))
