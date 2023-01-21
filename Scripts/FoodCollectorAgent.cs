@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -9,7 +11,9 @@ public class FoodCollectorAgent : Agent
     [SerializeField]
     private string targetFlag = "food";
     [SerializeField]
-    private string badFlag = "badFood";
+    private List<string> badFlags;
+
+    private float totalScore;
 
     FoodCollectorSettings m_FoodCollecterSettings;
     public GameObject area;
@@ -238,26 +242,30 @@ public class FoodCollectorAgent : Agent
         {
             Satiate();
             collision.gameObject.GetComponent<FoodLogic>().OnEaten();
+            ++totalScore;
             AddReward(1f);
             if (contribute)
             {
                 m_FoodCollecterSettings.totalScore += 1;
             }
         }
-        if (collision.gameObject.CompareTag(badFlag))
-        {
-            Poison();
-            collision.gameObject.GetComponent<FoodLogic>().OnEaten();
-
-            AddReward(-1f);
-            if (contribute)
+        for (int i = 0; i < badFlags.Count; ++i) {
+            if (collision.gameObject.CompareTag(badFlags[i]))
             {
-                m_FoodCollecterSettings.totalScore -= 1;
+                Poison();
+                collision.gameObject.GetComponent<FoodLogic>().OnEaten();
+                --totalScore;
+                AddReward(-1f);
+                if (contribute)
+                {
+                    m_FoodCollecterSettings.totalScore -= 1;
+                }
             }
         }
         if (collision.gameObject.CompareTag("agentPredator"))
         {
-            AddReward(-1f);
+            totalScore -= 100f;
+            AddReward(-100f);
             if (contribute)
             {
                 m_FoodCollecterSettings.totalScore = 0;
@@ -265,12 +273,17 @@ public class FoodCollectorAgent : Agent
         }
         if (collision.gameObject.CompareTag("wall"))
         {
+            --totalScore;
             AddReward(-1f);
             if (contribute)
             {
                 m_FoodCollecterSettings.totalScore -= 1;
             }
         }
+    }
+
+    public float getScore() {
+      return totalScore;
     }
 
     public void SetLaserLengths()

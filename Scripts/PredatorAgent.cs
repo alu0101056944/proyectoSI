@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -10,7 +12,9 @@ public class PredatorAgent : Agent
     [SerializeField]
     private string targetFlag = "agent";
     [SerializeField]
-    private string badFlag = "food";
+    private List<string> badFlags;
+
+    private float totalScore;
 
     FoodCollectorSettings m_FoodCollecterSettings;
     public GameObject area;
@@ -23,6 +27,7 @@ public class PredatorAgent : Agent
     float m_EffectTime;
     Rigidbody m_AgentRb;
     float m_LaserLength;
+
     // Speed of agent rotation.
     public float turnSpeed = 300;
 
@@ -239,23 +244,29 @@ public class PredatorAgent : Agent
         {
             Satiate();
             collision.gameObject.GetComponent<FoodLogic>().OnEaten();
-            AddReward(1f);
+            totalScore += 15f;
+            AddReward(15f);
             if (contribute)
             {
                 m_FoodCollecterSettings.totalScore += 1;
             }
         }
-        if (collision.gameObject.CompareTag(badFlag))
-        {
-            Poison();
-            collision.gameObject.GetComponent<FoodLogic>().OnEaten();
-
-            AddReward(-1f);
-            if (contribute)
+        for (int i = 0; i < badFlags.Count; ++i) {
+            if (collision.gameObject.CompareTag(badFlags[i]))
             {
-                m_FoodCollecterSettings.totalScore -= 1;
+                Poison();
+                --totalScore;
+                AddReward(-1f);
+                if (contribute)
+                {
+                    m_FoodCollecterSettings.totalScore -= 1;
+                }
             }
         }
+    }
+
+    public float getScore() {
+      return totalScore;
     }
 
     public void SetLaserLengths()
