@@ -25,16 +25,14 @@ public class EventSystemManager : MonoBehaviour
       currentSeconds = secondsBetweenReset;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        currentSeconds -= Time.deltaTime;
-        if (currentSeconds <= 0) {
-          Debug.Log(" alive : " + eventSystem.getAmountOfAlive());
-          if (eventSystem.getAmountOfAlive() == 0) {
-            eventSystem.randomize(maximumObstaclesToSpawn, weightOfObstacleSpawn);
-          }
-          currentSeconds = secondsBetweenReset;
+      currentSeconds -= Time.deltaTime;
+      if (currentSeconds <= 0) {
+        if (eventSystem.getAmountOfAlive() == 0) {
+          eventSystem.randomize(maximumObstaclesToSpawn, weightOfObstacleSpawn);
         }
+        currentSeconds = secondsBetweenReset;
+      }
     }
 }

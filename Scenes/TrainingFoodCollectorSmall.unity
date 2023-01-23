@@ -214,6 +214,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 415961984823933874, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614957886323866684, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614957886323866684, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.z
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1614957886323866684, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
         type: 3}
       propertyPath: m_ShowGizmos
@@ -233,6 +248,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040557720712463954, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: goodMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 49f0a5cf3bb283e42ae294682b831f80, type: 2}
+    - target: {fileID: 3329543813378461722, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329543813378461723, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: numFood
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329543813842069570, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3329543813842069577, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
         type: 3}
@@ -257,6 +292,11 @@ PrefabInstance:
     - target: {fileID: 3329543814349122258, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329543814416280587, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3329543814451379218, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
@@ -326,7 +366,32 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 401ad4983cc206c4f923a26dd2542db1, type: 2}
     - target: {fileID: 3792497649521698511, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
         type: 3}
+      propertyPath: m_GridSize.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792497649521698511, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792497649521698511, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
       propertyPath: m_ShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438397392983977932, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438397392983977932, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595638646117775205, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5618294268235951700, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
@@ -338,6 +403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BehaviorType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984167704327847299, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6591899614777907059, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
         type: 3}
@@ -353,6 +423,26 @@ PrefabInstance:
         type: 3}
       propertyPath: maximumObjects
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642229733662729226, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237391328071020660, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237391328071020660, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_GridSize.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237391328071020660, guid: 9f67af72f936a3f4fa7ebc647d2f6497,
+        type: 3}
+      propertyPath: m_ShowGizmos
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3329543814349122260, guid: 9f67af72f936a3f4fa7ebc647d2f6497, type: 3}
@@ -562,8 +652,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
         type: 3}
-      propertyPath: matrixArray.Array.data[6]
+      propertyPath: matrixArray.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
+        type: 3}
+      propertyPath: matrixArray.Array.data[5]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
+        type: 3}
+      propertyPath: matrixArray.Array.data[6]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
         type: 3}
@@ -644,6 +744,26 @@ PrefabInstance:
         type: 3}
       propertyPath: matrixArray.Array.data[27]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
+        type: 3}
+      propertyPath: matrixArray.Array.data[31]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
+        type: 3}
+      propertyPath: matrixArray.Array.data[32]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
+        type: 3}
+      propertyPath: matrixArray.Array.data[37]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
+        type: 3}
+      propertyPath: matrixArray.Array.data[38]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8833933270847354195, guid: 40f91a1f2a54c924da33097695363dfe,
         type: 3}
@@ -1196,6 +1316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stick
       objectReference: {fileID: 0}
+    - target: {fileID: 174412, guid: d91011873a48699488e1c1b9b86925e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 461292, guid: d91011873a48699488e1c1b9b86925e5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1346,6 +1470,10 @@ PrefabInstance:
     - target: {fileID: 196014, guid: b8433bdc340959d4b92f2fa9fc42d091, type: 3}
       propertyPath: m_Name
       value: sign_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 196014, guid: b8433bdc340959d4b92f2fa9fc42d091, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 437368, guid: b8433bdc340959d4b92f2fa9fc42d091, type: 3}
       propertyPath: m_RootOrder
@@ -1513,7 +1641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b7774d9552a8241a560cffaf14c30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenReset: 25
+  secondsBetweenReset: 20
   weightOfObstacleSpawn: 10
   maximumObstaclesToSpawn: 15
   automata: {fileID: 1393324616}
